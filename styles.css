@@ -1,0 +1,50 @@
+* {
+  box-sizing: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  background-color: rgb(54, 63, 78);
+  color: #eee;
+}
+
+@font-face {
+  font-family: 'Norse Bold';
+  src: url(/assets/fonts/Norse-Bold.otf);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex: 3;
+  background: url(/assets/image/foliage.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.logo {
+  height: 100px;
+}
+
+.logo-text {
+  margin-top: 1.2rem;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Norse Bold';
+  font-size: 36px;
+  background-color: rgba(4, 4, 4, 0.588);
+  width: 100%;
+  height: 20%;
+  margin-top: 10rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
