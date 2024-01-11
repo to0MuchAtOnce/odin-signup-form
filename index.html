@@ -7,47 +7,70 @@
     <title>ODIN</title>
   </head>
   <body>
-    <div class="image-container">
+    <section class="left-section">
       <div class="banner">
         <img class="logo" src="/assets/logo/odin-lined.png" alt="odin-logo" />
         <h1 class="logo-text">ODIN</h1>
       </div>
-    </div>
+      <div class="image-credit">
+        <p>
+          Photo by
+          <a
+            href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA"
+            class="image-credit-link"
+            >Halie West</a
+          >
+          on
+          <a href="https://unsplash.com/" class="image-credit-link">Unsplash</a>
+        </p>
+      </div>
+    </section>
 
     <div>
-      <div>
-        <p>
-          This is not a real online service! You know you need something like
-          this in your life to help you realize your deepest dreams. Sign up now
-          to get started.
-        </p>
-        <p>You know you want to.</p>
-      </div>
-      <form class="form" action="#">
-        <h4>Let's do this!</h4>
-        <div>
-          <label for="first-name">FIRST NAME</label>
-          <input type="text" id="first-name" />
-          <label for="last-name">LAST NAME</label>
-          <input type="text" id="last-name" />
+      <section class="right-section">
+        <div class="heading-2-container">
+          <h2 class="heading-2">
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams. Sign up
+            <em>now</em>
+            to get started.
+          </h2>
         </div>
-        <div>
-          <label for="email">EMAIL</label>
-          <input type="email" />
-          <label for="phone">PHONE NUMBER</label>
-          <input type="phone" />
-        </div>
-        <div>
-          <label for="password">PASSWORD</label>
-          <input type="password" />
-          <label for="confirm-password">CONFIRM PASSWORD</label>
-          <input type="confirm-password" />
-        </div>
-        <div>
-          <input type="button" value="Create Account" />
-        </div>
-        <p>Already have an account? <span>Log in</span></p>
-      </form>
+        <p class="heading-2-bottom">You <em>know</em> you want to.</p>
+        <form class="form" action="#">
+          <div class="form-contents">
+            <h3 class="heading-3">Let's do this!</h3>
+            <fieldset class="name-inputs fieldset">
+              <label for="first-name">FIRST NAME</label>
+              <input type="text" id="first-name" />
+              <label for="last-name">LAST NAME</label>
+              <input type="text" id="last-name" />
+            </fieldset>
+
+            <fieldset class="contact-inputs fieldset">
+              <div>
+                <label for="email">EMAIL</label>
+                <input type="email" />
+              </div>
+              <div>
+                <label for="phone">PHONE NUMBER</label>
+                <input type="phone" />
+              </div>
+            </fieldset>
+
+            <fieldset class="contact-inputs fieldset">
+              <label for="password">PASSWORD</label>
+              <input type="password" />
+              <label for="confirm-password">CONFIRM PASSWORD</label>
+              <input type="confirm-password" />
+            </fieldset>
+          </div>
+          <div class="btn-container">
+            <input type="button" value="Create Account" />
+            <p>Already have an account? <span>Log in</span></p>
+          </div>
+        </form>
+      </section>
     </div>
   </body>
 </html>
