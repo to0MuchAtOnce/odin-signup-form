@@ -1,3 +1,13 @@
+:root {
+  --bg: rgb(243, 243, 243);
+  --dark-text: #000;
+  --light-text: #eee;
+  --form-bg: #ffffff;
+  --banner-bg: rgba(4, 4, 4, 0.43);
+  --input-border: #e5e7eb;
+  --accent: #596d48;
+}
+
 * {
   box-sizing: 0;
   padding: 0;
@@ -5,9 +15,15 @@
 }
 
 body {
+  color: var(--dark-text);
+  background-color: var(--bg);
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  max-width: 100%;
+}
+
+main {
   display: flex;
-  background-color: rgb(54, 63, 78);
-  color: #eee;
 }
 
 @font-face {
@@ -15,20 +31,35 @@ body {
   src: url(/assets/fonts/Norse-Bold.otf);
 }
 
-.image-container {
+.left-section {
   display: flex;
-  justify-content: center;
-  flex: 3;
+  justify-content: space-between;
+  flex-direction: column;
+  flex: 2;
+  text-align: center;
   background: url(/assets/image/foliage.jpg);
   background-size: cover;
   height: 100vh;
+  max-width: 1000px;
+  min-width: 35%;
+  z-index: 1;
+}
+
+.image-credit {
+  margin-bottom: 15px;
+}
+
+.image-credit,
+.image-credit-link {
+  color: var(--light-text);
 }
 
 .logo {
-  height: 100px;
+  height: 140px;
 }
 
 .logo-text {
+  color: #eee;
   margin-top: 1.2rem;
 }
 
@@ -37,14 +68,126 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Norse Bold';
-  font-size: 36px;
-  background-color: rgba(4, 4, 4, 0.588);
+  font-size: 76px;
+  background-color: var(--banner-bg);
   width: 100%;
-  height: 20%;
-  margin-top: 10rem;
+  height: 175px;
+  margin-top: 18rem;
 }
 
-.form {
+.right-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 83vh;
+  width: 100%;
+}
+
+.heading-2,
+.heading-2-bottom,
+.heading-3 {
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.heading-2,
+.heading-2-bottom,
+.btn-container {
+  margin-left: 3rem;
+}
+
+.form-contents {
+  padding-left: 3rem;
+}
+
+.heading-2 {
+  font-weight: 600;
+  max-width: 47.5rem;
+  padding-right: 10rem;
+  margin-bottom: 2.5rem;
+}
+
+.heading-2-bottom {
+  margin-bottom: 4rem;
+}
+
+.heading-3 {
+  padding: 2rem 0 0;
+}
+
+.form-input,
+label {
+  display: block;
+  width: 250px;
+}
+
+label {
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+input:valid {
+  border-color: green;
+}
+
+.form-input {
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  outline: 0;
+  padding: 8px;
+  margin-right: 48px;
+  max-width: 100%;
+}
+
+.form-input:focus {
+  border: 1px solid rgba(41, 41, 247, 0.764);
+  box-shadow: 1px 3px 6px 0px rgba(170, 170, 170, 0.75);
+}
+
+.form-contents {
+  background-color: var(--form-bg);
+  box-shadow: 5px 5px 8px 1px rgba(197, 197, 197, 0.75);
+  margin-bottom: 2rem;
+}
+
+.form-contents > div {
   display: flex;
   flex-direction: column;
+  row-gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.fieldset {
+  display: flex;
+  border: 0;
+}
+
+.form-btn {
+  background-color: var(--accent);
+  box-shadow: 9px 9px 12px -6px rgba(140, 140, 140, 0.75);
+  color: #eee;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0.8rem 3.2rem;
+  border-radius: 8px;
+  border: 0;
+  outline: 0;
+  margin-bottom: 2rem;
+}
+
+.form-btn:hover {
+  cursor: pointer;
+}
+
+.form-btn:active {
+  transform: scale(0.98);
+}
+
+.login-text {
+  font-size: 20px;
+}
+
+.login-text > span {
+  color: var(--accent);
 }
