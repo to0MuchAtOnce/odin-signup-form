@@ -59,7 +59,7 @@ main {
 }
 
 .logo-text {
-  color: #eee;
+  color: var(--light-text);
   margin-top: 1.2rem;
 }
 
@@ -190,4 +190,31 @@ input:valid {
 
 .login-text > span {
   color: var(--accent);
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    flex-direction: column;
+  }
+
+  .right-section {
+    height: 75vh;
+  }
+
+  .heading-2,
+  .heading-2-bottom,
+  .heading-3 {
+    padding-right: 2.5rem;
+  }
+
+  .fieldset {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .form-input,
+  label {
+    width: 80vw;
+  }
 }
