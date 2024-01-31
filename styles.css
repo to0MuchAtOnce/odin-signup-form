@@ -127,10 +127,6 @@ label {
   margin-bottom: 3px;
 }
 
-input:valid {
-  border-color: green;
-}
-
 .form-input {
   border: 1px solid var(--input-border);
   border-radius: 4px;
@@ -161,6 +157,12 @@ input:valid {
 .fieldset {
   display: flex;
   border: 0;
+}
+
+.error.active {
+  border-color: 1px solid rgb(198, 80, 80);
+  color: rgb(198, 80, 80);
+  font-size: 12px;
 }
 
 .form-btn {
@@ -195,6 +197,11 @@ input:valid {
 @media screen and (max-width: 1000px) {
   main {
     flex-direction: column;
+  }
+
+  .banner {
+    margin: 10rem 0;
+    height: 200px;
   }
 
   .right-section {
