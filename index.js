@@ -4,6 +4,8 @@ const firstName = document.querySelector('.first-name');
 const lastName = document.querySelector('.last-name');
 const email = document.querySelector('.email');
 const phone = document.querySelector('.phone');
+const password = document.querySelector('.password');
+const confirmPassword = document.querySelector('.confirm-password');
 const emailError = document.querySelector('#email + span.email-error');
 const phoneError = document.querySelector('#phone + span.phone-error');
 const firstNameError = document.querySelector(
@@ -11,6 +13,10 @@ const firstNameError = document.querySelector(
 );
 const lastNameError = document.querySelector(
   '#last-name + span.last-name-error'
+);
+const passwordError = document.querySelector('#password + span.password-error');
+const confirmPasswordError = document.querySelector(
+  '#confirm-password + span.confirm-password-error'
 );
 
 formInputs.forEach((input) => {
@@ -27,7 +33,7 @@ formInputs.forEach((input) => {
 });
 
 firstName.addEventListener('input', () => {
-  if (email.validity.valid) {
+  if (firstName.validity.valid) {
     firstNameError.textContent = '';
     firstNameError.className = 'name-error';
   } else {
@@ -36,7 +42,7 @@ firstName.addEventListener('input', () => {
 });
 
 lastName.addEventListener('input', () => {
-  if (email.validity.valid) {
+  if (lastName.validity.valid) {
     lastNameError.textContent = '';
     lastNameError.className = 'name-error';
   } else {
@@ -62,12 +68,46 @@ phone.addEventListener('input', () => {
   }
 });
 
+password.addEventListener('input', () => {
+  if (password.validity.vaild) {
+    passwordError.textContent = '';
+    passwordError.className = 'password-error';
+  } else {
+    showError();
+  }
+});
+
+confirmPassword.addEventListener('input', () => {
+  if (confirmPassword.validity.vaild) {
+    confirmPasswordError.textContent = '';
+    confirmPasswordError.className = 'confirm-password-error';
+  } else {
+    showError();
+  }
+});
+
 form.addEventListener('submit', (e) => {
   if (!email.validity.vaild) {
     showError();
     e.preventDefault();
   }
   if (!phone.validity.vaild) {
+    showError();
+    e.preventDefault();
+  }
+  if (!firstName.validity.vaild) {
+    showError();
+    e.preventDefault();
+  }
+  if (!lastName.validity.vaild) {
+    showError();
+    e.preventDefault();
+  }
+  if (!password.validity.vaild) {
+    showError();
+    e.preventDefault();
+  }
+  if (!confirmPassword.validity.vaild) {
     showError();
     e.preventDefault();
   }
@@ -99,11 +139,13 @@ function showError() {
   }
 
   if (confirmPassword.validity.valueMissing) {
-    confirmPassword.textContent = 'Please enter a valid password.';
+    confirmPasswordError.textContent = 'Please confirm your password.';
   }
   // Set css classes
   emailError.className = 'error active';
   phoneError.className = 'error active';
   firstNameError.className = 'error active';
   lastNameError.className = 'error active';
+  passwordError.className = 'error active';
+  confirmPasswordError.className = 'error active';
 }
