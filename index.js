@@ -87,19 +87,19 @@ confirmPassword.addEventListener('input', () => {
 });
 
 form.addEventListener('submit', (e) => {
-  if (!email.validity.vaild) {
-    showError();
-    e.preventDefault();
-  }
-  if (!phone.validity.vaild) {
-    showError();
-    e.preventDefault();
-  }
   if (!firstName.validity.vaild) {
     showError();
     e.preventDefault();
   }
   if (!lastName.validity.vaild) {
+    showError();
+    e.preventDefault();
+  }
+  if (!email.validity.vaild) {
+    showError();
+    e.preventDefault();
+  }
+  if (!phone.validity.vaild) {
     showError();
     e.preventDefault();
   }
@@ -132,15 +132,22 @@ function showError() {
     phoneError.textContent = 'Please enter a vaild phone number.';
   } else if (phone.validity.tooShort) {
     phoneError.textContent = 'Phone number must be atleast 9 digits.';
+  } else {
+    phoneError.textContent = '';
   }
 
   if (password.validity.valueMissing) {
     passwordError.textContent = 'Please enter a valid password.';
+  } else {
+    passwordError.textContent = '';
   }
 
   if (confirmPassword.validity.valueMissing) {
     confirmPasswordError.textContent = 'Please confirm your password.';
+  } else {
+    confirmPasswordError.textContent = '';
   }
+
   // Set css classes
   emailError.className = 'error active';
   phoneError.className = 'error active';
