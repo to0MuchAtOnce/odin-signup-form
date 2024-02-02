@@ -59,7 +59,7 @@ main {
 }
 
 .logo-text {
-  color: #eee;
+  color: var(--light-text);
   margin-top: 1.2rem;
 }
 
@@ -127,10 +127,6 @@ label {
   margin-bottom: 3px;
 }
 
-input:valid {
-  border-color: green;
-}
-
 .form-input {
   border: 1px solid var(--input-border);
   border-radius: 4px;
@@ -163,6 +159,12 @@ input:valid {
   border: 0;
 }
 
+.error.active {
+  border-color: 1px solid rgb(198, 80, 80);
+  color: rgb(198, 80, 80);
+  font-size: 12px;
+}
+
 .form-btn {
   background-color: var(--accent);
   box-shadow: 9px 9px 12px -6px rgba(140, 140, 140, 0.75);
@@ -190,4 +192,58 @@ input:valid {
 
 .login-text > span {
   color: var(--accent);
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    flex-direction: column;
+  }
+
+  .banner {
+    margin: 10rem 0;
+    height: 200px;
+  }
+
+  .right-section {
+    height: 75vh;
+  }
+
+  .heading-2,
+  .heading-2-bottom,
+  .heading-3 {
+    padding-right: 2.5rem;
+  }
+
+  .heading-2 {
+    padding-top: 50px;
+  }
+
+  .fieldset {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .form-input,
+  label {
+    width: 80vw;
+  }
+
+  .form-input {
+    margin-bottom: 0.4rem;
+  }
+
+  /* .error.active {
+  } */
+
+  .heading-2 {
+    padding-top: 250px;
+  }
+
+  .heading-2,
+  .heading-2-bottom,
+  .heading-3 {
+    font-size: 24px;
+    padding-right: 2.5rem;
+  }
 }
