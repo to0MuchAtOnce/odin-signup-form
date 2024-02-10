@@ -28,7 +28,7 @@ main {
 
 @font-face {
   font-family: 'Norse Bold';
-  src: url(/assets/fonts/Norse-Bold.otf);
+  src: url(assets/fonts/Norse-Bold.otf);
 }
 
 .left-section {
@@ -37,7 +37,7 @@ main {
   flex-direction: column;
   flex: 2;
   text-align: center;
-  background: url(/assets/image/foliage.jpg);
+  background: url(assets/image/foliage.jpg);
   background-size: cover;
   height: 100vh;
   max-width: 1000px;
